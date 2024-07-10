@@ -1,0 +1,43 @@
+.userCard {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+
+  padding: 36px 20px 20px;
+
+  border-radius: 10px;
+  box-shadow: 0 1px 4px 0 rgb(51 51 51 / 15%);
+}
+
+.image {
+  position: relative;
+
+  overflow: hidden;
+
+  width: 124px;
+  height: 124px;
+
+  border-radius: 50%;
+
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+  }
+}
+
+.title {
+  font-size: 20px;
+}
+
+.action {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
