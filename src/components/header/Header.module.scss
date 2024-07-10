@@ -1,0 +1,28 @@
+.header {
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  padding-top: 30px;
+
+  @media (max-width: $mobile) {
+    padding-top: 20px;
+  }
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.logout {
+  margin-left: auto;
+
+  @media (max-width: $mobile) {
+    color: var(--color-gray-light);
+    background-color: transparent;
+  }
+}
