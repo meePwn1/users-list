@@ -4,7 +4,6 @@ import { PARAMS } from '@/common/constants/params'
 import { UserCard } from '@/components/our-team/user-card'
 import { UserCardSkeleton } from '@/components/our-team/user-card/UserCardSkeleton'
 import { Pagination } from '@/components/ui/pagination'
-import { Select } from '@/components/ui/select'
 import { VioletCard } from '@/components/violet-card'
 import { useGetUsersQuery } from '@/services/users/users.service'
 import clsx from 'clsx'
@@ -13,10 +12,6 @@ import s from './OurTeam.module.scss'
 
 const perPageOptions = [4, 8, 12]
 const PER_PAGE = perPageOptions[0]
-const FAVORITE_USERS_SELECT = [
-  { text: 'Все', value: '' },
-  { text: 'Избранные', value: 'favorite' },
-]
 
 export const OurTeam = () => {
   const [searchParams, setSearchParams] = useSearchParams()
@@ -61,7 +56,6 @@ export const OurTeam = () => {
       </section>
       <section>
         <div className={clsx('container', s.usersWrapper)}>
-          <Select options={FAVORITE_USERS_SELECT} />
           <div className={s.users}>
             {isFetching ? (
               <UserCardSkeleton count={per_page} />

@@ -26,9 +26,7 @@ const router = createBrowserRouter([
 
 function PrivateRoutes() {
   const status = useSelector(appSelectors.status)
-  // const isAuthenticated = useSelector(appSelectors.isAuthenticated)
-
-  const isAuthenticated = true
+  const isAuthenticated = useSelector(appSelectors.isAuthenticated)
 
   if (status === 'pending') {
     return <div>...loading</div>
