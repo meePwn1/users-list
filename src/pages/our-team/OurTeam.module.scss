@@ -25,3 +25,19 @@
 .usersWrapper {
   padding-top: 48px;
 }
+
+.users {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 60px;
+
+  @media (max-width: em(620)) {
+    flex-direction: column;
+  }
+}

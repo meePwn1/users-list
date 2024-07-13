@@ -1,3 +1,6 @@
+import { Link } from 'react-router-dom'
+
+import { ROUTES } from '@/common/constants'
 import { Button } from '@/components/ui/button'
 import { User } from '@/services/users/users.types'
 import { Heart } from 'lucide-react'
@@ -10,10 +13,12 @@ type Props = {
 export const UserCard = ({ user }: Props) => {
   return (
     <div className={s.userCard}>
-      <div className={s.image}>
+      <Link className={s.image} to={ROUTES.OUR_TEAM_MEMBER(user.id.toString())}>
         <img alt={`${user.first_name} ${user.last_name}`} src={user.avatar} />
-      </div>
-      <h3 className={s.title}>{`${user.first_name} ${user.last_name}`}</h3>
+      </Link>
+      <Link className={s.title} to={ROUTES.OUR_TEAM_MEMBER(user.id.toString())}>
+        {`${user.first_name} ${user.last_name}`}
+      </Link>
       <div className={s.action}>
         <Button variant={'icon'}>
           <Heart size={14} />

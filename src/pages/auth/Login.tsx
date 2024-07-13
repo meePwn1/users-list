@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'
 
 import { appActions, appSelectors } from '@/app/app.slice'
 import { ROUTES } from '@/common/constants'
-import { getUserDataFromLocalStorage } from '@/common/utils/get-user-data-from-local-storage'
+import { getAuthDataFromLocalStorage } from '@/common/utils'
 import { SignIn } from '@/components/auth/sign-in'
 import { AuthArgs } from '@/services/auth/auth.types'
 import { toast } from 'sonner'
@@ -15,7 +15,7 @@ export const Login = () => {
 
   const handleSubmit = (data: AuthArgs) => {
     dispatch(appActions.setStatus('pending'))
-    getUserDataFromLocalStorage().then(res => {
+    getAuthDataFromLocalStorage().then(res => {
       if (
         res.email === data.email &&
         res.password === data.password &&

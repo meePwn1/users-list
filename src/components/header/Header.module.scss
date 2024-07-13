@@ -26,3 +26,10 @@
     background-color: transparent;
   }
 }
+
+.back {
+  @media (max-width: $mobile) {
+    color: var(--color-gray-light);
+    background-color: transparent;
+  }
+}

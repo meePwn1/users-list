@@ -1,10 +1,10 @@
 import { Navigate, RouteObject } from 'react-router-dom'
 
 import { ROUTES } from '@/common/constants'
-import { TeamMember } from '@/pages/TeamMember'
 import { Login } from '@/pages/auth/Login'
 import { Register } from '@/pages/auth/Register'
 import { OurTeam } from '@/pages/our-team/OurTeam'
+import { OurTeamMember } from '@/pages/our-team-member'
 
 export const publicRoutes: RouteObject[] = [
   {
@@ -23,5 +23,5 @@ export const privateRoutes: RouteObject[] = [
     path: ROUTES.HOME,
   },
   { element: <OurTeam />, path: ROUTES.OUR_TEAM },
-  { element: <TeamMember />, path: ROUTES.TEAM_MEMBER() },
+  { element: <OurTeamMember />, path: ROUTES.OUR_TEAM_MEMBER() },
 ]

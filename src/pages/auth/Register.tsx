@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'
 
 import { appActions, appSelectors } from '@/app/app.slice'
 import { ROUTES } from '@/common/constants'
-import { setUserDataToLocalStorage } from '@/common/utils'
+import { setAuthDataToLocalStorage } from '@/common/utils'
 import { SignUp } from '@/components/auth/sign-up'
 import { AuthArgs } from '@/services/auth/auth.types'
 import { toast } from 'sonner'
@@ -27,7 +27,7 @@ export const Register = () => {
 
   const handleSubmit = (data: AuthArgs) => {
     dispatch(appActions.setStatus('pending'))
-    setUserDataToLocalStorage(data).then(() => {
+    setAuthDataToLocalStorage(data).then(() => {
       toast.success('Регистрация прошла успешно')
       dispatch(appActions.setIsAuthenticated(true))
       dispatch(appActions.setStatus('succeeded'))

@@ -1,0 +1,57 @@
+.label {
+  display: inline-block;
+  margin-bottom: 10px;
+  font-size: 16px;
+  transition: color 0.3s ease 0s;
+}
+
+.input {
+  width: 100%;
+  height: 48px;
+  padding: 12px 8px 12px 16px;
+
+  font-size: 14px;
+  color: var(--color-gray);
+
+  background-color: var(--color-gray-light);
+  border: 1px solid transparent;
+  border-radius: 8px;
+  outline: none;
+
+  transition: all ease 0.3s;
+
+  &.error {
+    border-color: var(--color-red);
+  }
+}
+
+.inputWrapper {
+  position: relative;
+}
+
+.icon-right {
+  position: absolute;
+  top: 50%;
+  right: 8px;
+  transform: translateY(-50%);
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 30px;
+  height: 100%;
+
+  svg {
+    stroke: var(--color-gray);
+  }
+}
+
+.errorLabel {
+  position: absolute;
+  top: 103%;
+  left: 0;
+
+  font-size: 12px;
+  color: var(--color-red);
+}
