@@ -18,3 +18,13 @@ export const setAuthDataToLocalStorage = (data: AuthArgs) => {
     }, 1000)
   })
 }
+
+export const getAuthenticatedStatus = (): boolean => {
+  const data = localStorage.getItem('auth')
+
+  return data === 'true' ? true : false
+}
+
+export const setAuthenticatedStatus = (data: boolean) => {
+  localStorage.setItem('auth', data.toString())
+}

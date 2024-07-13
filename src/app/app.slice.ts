@@ -1,3 +1,4 @@
+import { getAuthenticatedStatus, setAuthenticatedStatus } from '@/common/utils'
 import { PayloadAction, createSlice } from '@reduxjs/toolkit'
 
 type InitState = {
@@ -6,11 +7,14 @@ type InitState = {
 }
 
 const appSlice = createSlice({
-  initialState: {} as InitState,
+  initialState: {
+    isAuthenticated: getAuthenticatedStatus(),
+  } as InitState,
   name: 'app',
   reducers: {
     setIsAuthenticated(state, action: PayloadAction<boolean>) {
       state.isAuthenticated = action.payload
+      setAuthenticatedStatus(action.payload)
     },
     setStatus(state, action: PayloadAction<'failed' | 'idle' | 'pending' | 'succeeded'>) {
       state.status = action.payload

@@ -2,6 +2,7 @@ import { useDispatch } from 'react-redux'
 import { Link, useNavigate } from 'react-router-dom'
 
 import { appActions } from '@/app/app.slice'
+import { ROUTES } from '@/common/constants'
 import { useBreakpoint } from '@/common/hooks'
 import { Button } from '@/components/ui/button'
 import clsx from 'clsx'
@@ -14,6 +15,7 @@ export const Header = () => {
   const dispatch = useDispatch()
   const handleLogOut = () => {
     dispatch(appActions.setIsAuthenticated(false))
+    navigate(ROUTES.SIGN_IN)
   }
   const handleNavigate = () => {
     navigate(-1)
