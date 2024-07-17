@@ -10,7 +10,6 @@ export type User = {
   id: number
   last_name: string
 }
-export type UserTransformed = { favorite: '' | 'favorite' } & User
 
 export type UsersResponse = {
   data: User[]
@@ -23,7 +22,6 @@ export type UsersResponse = {
   total: number
   total_pages: number
 }
-export type UsersResponseTransformed = { data: UserTransformed[] } & Omit<UsersResponse, 'data'>
 
 export type UserByIdResponse = {
   data: User
